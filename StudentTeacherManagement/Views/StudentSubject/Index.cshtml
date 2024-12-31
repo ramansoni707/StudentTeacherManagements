@@ -1,0 +1,25 @@
+﻿@model IEnumerable<IGrouping<string, StudentTeacherManagement.Models.Student>>
+
+@foreach (var group in Model)
+{
+    <div>
+        <h2>@group.Key Class</h2>
+
+        <!-- Table for each class -->
+        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; margin-bottom: 20px;">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in group)
+                {
+                    <tr>
+                        <td>@student.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

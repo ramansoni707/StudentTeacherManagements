@@ -1,0 +1,32 @@
+﻿@model List<StudentTeacherManagement.Models.StudentsTeachersViewModel>
+
+@{
+    ViewData["Title"] = "Students and Teachers by Class";
+}
+
+<h2>Students and Teachers by Class</h2>
+
+@foreach (var classGroup in Model)
+{
+    <h3>@classGroup.Class</h3>
+
+    <!-- Display Students -->
+    <h4>Students:</h4>
+    <ul class="list-group">
+        @foreach (var student in classGroup.Students)
+        {
+            <li class="list-group-item">@student.Name</li>
+        }
+    </ul>
+
+    <!-- Display Teachers -->
+    <h4>Teachers:</h4>
+    <ul class="list-group">
+        @foreach (var teacher in classGroup.Teachers)
+        {
+            <li class="list-group-item">@teacher.Name</li>
+        }
+    </ul>
+
+    <hr />
+}

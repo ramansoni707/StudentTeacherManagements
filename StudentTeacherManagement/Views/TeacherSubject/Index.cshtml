@@ -1,0 +1,32 @@
+﻿@model IEnumerable<StudentTeacherManagement.Models.TeacherSubjectViewModel>
+
+@{
+    ViewData["Title"] = "Teacher-Subject List";
+}
+
+<h1>Student-Class List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Teacher Name</th>
+            <th>Subjects</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Teacher.Name</td>
+                <td>
+                    @foreach (var subject in item.Subjects)
+                    {
+                        <span>@subject.Name</span>
+
+                        <br />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
